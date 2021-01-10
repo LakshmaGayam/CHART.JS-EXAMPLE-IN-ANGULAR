@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <!-- <tag-input [(ngModel)]='itemsAsObjects' [editable]='true' (onTagEdited)="onTagEdited($event)" ></tag-input> -->
+  <tag-input [ngModel]="['itemsAsObjects']" (onAdd)="onItemAdded($event)"
+  (onRemove)="onItemRemoved($event)"
+
+           [onlyFromAutocomplete]="true" [maxItems]='5'>
+    <tag-input-dropdown [showDropdownIfEmpty]="true"
+                        [autocompleteItems]="itemsAsObjects">
+    </tag-input-dropdown>
+</tag-input>
+<div width="50" height="100">
+  <canvas  id="myChart" ></canvas>
+</div>
+<router-outlet></router-outlet>
